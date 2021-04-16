@@ -15,26 +15,54 @@ fun main() {
     isLenient = true
   }
 
-  window.onload = { document.body?.sayHello() }
-  GlobalScope.launch {
-    val mark = TimeSource.Monotonic.markNow()
-    val client = HttpClient()
-    val resp = client.get<String>("https://httpbin.org/get")
-    val took = mark.elapsedNow()
+  window.onload =
+      {
+        val root = document.body
+        root?.sayHello()
 
-    document.body?.append {
-      div {
-        style = "white-space: pre-line; background: #DDDDDD"
-        +"""
-         $resp
-         ${took.toDouble(DurationUnit.MILLISECONDS)} ms
-         """.trimIndent()
+        GlobalScope.launch {
+          val mark = TimeSource.Monotonic.markNow()
+          val client = HttpClient()
+          val resp = client.get<String>("https://httpbin.org/get")
+          val took = mark.elapsedNow()
+
+          root?.append {
+            div {
+              style = "white-space: pre-line; background: #DDDDDD"
+
+              +"""
+               $resp
+               ${took.toDouble(DurationUnit.MILLISECONDS)} ms
+               """.trimIndent()
+            }
+
+            // iframe { src = "https://pl.kotl.in/yIx7pHtRa?theme=darcula" }
+
+            div {
+              classes = setOf("kotlin-code")
+              attributes["theme"] = "darcula"
+              attributes["folded-button"] = "true"
+
+              +"""
+               fun main() {
+                 val langs = listOf("Java","Kotlin","Scala","Clojure","Groovy")
+                 langs.forEach {
+                    println(it)
+                 } 
+                }            
+               """.trimIndent()
+            }
+          }
+
+          println("Enabling Kotlin Playground!")
+          KotlinPlayground(".kotlin-code")
+        }
+
+        List(5) { console.log("Hello Kotlin/JS-$it: ${Clock.System.now()}") }
       }
-    }
-  }
-
-  List(10) { console.log("Hello KotlinJS-$it: ${Clock.System.now()}") }
 }
+
+external fun KotlinPlayground(message: String)
 
 fun Node.sayHello() {
   append { div { +"Hello KotlinJS!" } }
