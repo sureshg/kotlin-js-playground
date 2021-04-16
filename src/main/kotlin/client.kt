@@ -17,7 +17,7 @@ fun main() {
 
   window.onload =
       {
-        val root = document.body
+        val root = document.getElementById("root") as? HTMLDivElement
         root?.sayHello()
 
         GlobalScope.launch {
@@ -62,8 +62,8 @@ fun main() {
       }
 }
 
-external fun KotlinPlayground(message: String)
-
 fun Node.sayHello() {
   append { div { +"Hello KotlinJS!" } }
 }
+
+external fun KotlinPlayground(message: String)
