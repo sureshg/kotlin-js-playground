@@ -24,9 +24,11 @@ dependencies {
   implementation("io.ktor:ktor-client-websockets:$ktorVersion")
   implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
   implementation("org.jetbrains:kotlin-styled:5.2.3-pre.153-kotlin-1.4.32")
+  implementation("com.russhwolf:multiplatform-settings:0.7.4")
   testImplementation(kotlin("test-js"))
   // implementation(npm("crypto-js", "4.0.0"))
   // implementation(npm("@types/crypto-js", "4.0.1", generateExternals = true))
+  // implementation("dev.inmo:krontab:0.5.1")
   // implementation(devNpm("webpack-bundle-analyzer", "4.4.0"))
 }
 

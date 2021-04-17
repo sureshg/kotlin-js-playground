@@ -7,6 +7,7 @@ Kotlin/JS playground
 - [Kotlin Playground](https://play.kotlinlang.org/)
 - [Kotlin Playground Github](https://github.com/JetBrains/kotlin-playground)
 - [Kotlin Playground Examples](https://jetbrains.github.io/kotlin-playground/examples/)
+- [Kotlin/JS Coroutines](https://github.com/Kotlin/kotlinx.coroutines/tree/master/js/example-frontend-js)
 
 ### TypeScript Types
 

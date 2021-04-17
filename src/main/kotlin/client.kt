@@ -1,9 +1,11 @@
+import com.russhwolf.settings.*
 import io.ktor.client.*
 import io.ktor.client.request.*
 import kotlin.time.*
 import kotlinx.browser.*
 import kotlinx.coroutines.*
-import kotlinx.datetime.*
+import kotlinx.datetime.Clock
+import kotlinx.datetime.internal.JSJoda.*
 import kotlinx.html.*
 import kotlinx.html.dom.*
 import kotlinx.serialization.json.*
@@ -20,6 +22,11 @@ fun main() {
         val root = document.getElementById("root") as? HTMLDivElement
         root?.sayHello()
 
+        val settings = JsSettings()
+        if (settings.getStringOrNull("name").isNullOrBlank()) {
+          settings["name"] = window.navigator.userAgent
+        }
+
         GlobalScope.launch {
           val mark = TimeSource.Monotonic.markNow()
           val client = HttpClient()
@@ -32,11 +39,15 @@ fun main() {
 
               +"""
                $resp
+               ${settings.getString("name","n/a")}
                ${took.toDouble(DurationUnit.MILLISECONDS)} ms
                """.trimIndent()
             }
 
-            // iframe { src = "https://pl.kotl.in/yIx7pHtRa?theme=darcula" }
+            div {
+              id = "time"
+              style = "background: cyan"
+            }
 
             div {
               classes = setOf("kotlin-code")
@@ -53,13 +64,24 @@ fun main() {
                """.trimIndent()
             }
           }
-
           println("Enabling Kotlin Playground!")
           KotlinPlayground(".kotlin-code")
         }
 
+        // Schedule on window.asCoroutineDispatcher()
+        CoroutineScope(Dispatchers.Default).launch {
+          while (isActive) {
+            val time = document.getElementById("time")
+            time?.textContent = ZonedDateTime.now().toLocalDateTime().toString()
+            delay(1000)
+          }
+        }
+
+        // jsTypeOf()
+        // js()
+
         val epoch = js("Date.now()") as Double
-        println("Epoch: $epoch")
+        println("Epoch using JS Date: $epoch")
         List(5) { println("Kotlin/JS-$it: ${Clock.System.now()}") }
       }
 }
