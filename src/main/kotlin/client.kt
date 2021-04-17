@@ -58,12 +58,14 @@ fun main() {
           KotlinPlayground(".kotlin-code")
         }
 
-        List(5) { console.log("Hello Kotlin/JS-$it: ${Clock.System.now()}") }
+        val epoch = js("Date.now()") as Double
+        println("Epoch: $epoch")
+        List(5) { println("Kotlin/JS-$it: ${Clock.System.now()}") }
       }
 }
 
 fun Node.sayHello() {
-  append { div { +"Hello KotlinJS!" } }
+  append { div { +"Hello Kotlin/JS!" } }
 }
 
 external fun KotlinPlayground(message: String)

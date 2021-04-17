@@ -7,6 +7,6 @@ class TestClient {
   fun testSayHello() {
     val container = document.createElement("div")
     container.sayHello()
-    assertEquals("Hello KotlinJS!", container.textContent)
+    assertEquals("Hello Kotlin/JS!", container.textContent)
   }
 }
