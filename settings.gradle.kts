@@ -6,6 +6,7 @@ dependencyResolutionManagement {
     google()
     maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
     maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    jcenter() // For RSocket
   }
 }
 

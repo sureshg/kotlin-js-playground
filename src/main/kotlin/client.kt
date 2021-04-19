@@ -1,9 +1,14 @@
 import com.russhwolf.settings.*
 import io.ktor.client.*
+import io.ktor.client.features.websocket.*
 import io.ktor.client.request.*
+import io.rsocket.kotlin.payload.*
+import io.rsocket.kotlin.transport.ktor.client.*
+import kotlin.collections.set
 import kotlin.time.*
 import kotlinx.browser.*
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import kotlinx.datetime.Clock
 import kotlinx.datetime.internal.JSJoda.*
 import kotlinx.html.*
@@ -28,8 +33,12 @@ fun main() {
         }
 
         GlobalScope.launch {
+          val client = HttpClient {
+            install(WebSockets)
+            install(RSocketSupport)
+          }
+
           val mark = TimeSource.Monotonic.markNow()
-          val client = HttpClient()
           val resp = client.get<String>("https://httpbin.org/get")
           val took = mark.elapsedNow()
 
@@ -66,6 +75,10 @@ fun main() {
           }
           println("Enabling Kotlin Playground!")
           KotlinPlayground(".kotlin-code")
+
+          val rSocket = client.rSocket(urlString = "wss://rsocket-demo.herokuapp.com/rsocket")
+          val stream = rSocket.requestStream(buildPayload { data("Hello") })
+          stream.take(10).collect { println(it.data.readText()) }
         }
 
         // Schedule on window.asCoroutineDispatcher()
