@@ -5,6 +5,7 @@ Kotlin/JS playground
 ### Resources
 
 - [Kotlin Multiplatform Libraries](https://github.com/AAkira/Kotlin-Multiplatform-Libraries)
+- [Multiplatform Github Repos](https://github.com/topics/multiplatform?l=kotlin&o=desc&s=updated)
 - [Kotlin Playground](https://play.kotlinlang.org/)
 - [Kotlin Playground Github](https://github.com/JetBrains/kotlin-playground)
 - [Kotlin Playground Examples](https://jetbrains.github.io/kotlin-playground/examples/)
@@ -21,3 +22,9 @@ Kotlin/JS playground
 - [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types)
 - [Type Search](https://www.typescriptlang.org/dt/search?search=chrome+exte)
 - [NpmJS Types](https://www.npmjs.com/~types)
+
+### RSocket
+
+- [RSocket Kotlin](https://github.com/rsocket/rsocket-kotlin)
+- [RSocket KMP Chat](https://github.com/rsocket/rsocket-kotlin/tree/master/examples/multiplatform-chat)
+- [Rsocket Frame Inspector](https://chrome.google.com/webstore/detail/rsocket-frame-inspector/nijdiakpmjaohioaelphnfdbdpbbgkhc)
