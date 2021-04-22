@@ -7,6 +7,9 @@ import io.rsocket.kotlin.core.*
 import io.rsocket.kotlin.keepalive.*
 import io.rsocket.kotlin.payload.*
 import io.rsocket.kotlin.transport.ktor.client.*
+import kotlin.collections.set
+import kotlin.time.*
+import kotlin.time.Duration
 import kotlinx.browser.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
@@ -21,9 +24,6 @@ import org.intellij.markdown.flavours.gfm.*
 import org.intellij.markdown.html.*
 import org.intellij.markdown.parser.*
 import org.w3c.dom.*
-import kotlin.collections.set
-import kotlin.time.*
-import kotlin.time.Duration
 
 fun main() {
   val format = Json {
@@ -59,7 +59,7 @@ fun main() {
                     // Interceptors
                     interceptors {
                       forConnection { conn ->
-                        println("Accepting new connection from $conn")
+                        println("Accepting new RSocket connection!")
                         conn
                       }
                     }
@@ -152,7 +152,7 @@ suspend fun rSocketTest(client: HttpClient) {
   try {
     log("\nRSocket Test\n")
     log("------------\n")
-    val demoUrl = "ws://localhost:9090/rsocket" // "wss://demo.rsocket.io/rsocket"
+    val demoUrl = "wss://demo.rsocket.io/rsocket"
     println("Connecting to RSocket server at $demoUrl")
     val rSocket = client.rSocket(urlString = demoUrl)
     val stream = rSocket.requestStream(Payload.Empty)
