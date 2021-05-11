@@ -4,12 +4,14 @@ Kotlin/JS playground
 
 ### Resources
 
+- [🔍 Multiplatform Package Search](https://package-search.jetbrains.com/search?query=http&onlyMpp=true)
 - [Kotlin Multiplatform Libraries](https://github.com/AAkira/Kotlin-Multiplatform-Libraries)
 - [Multiplatform Github Repos](https://github.com/topics/multiplatform?l=kotlin&o=desc&s=updated)
-- [Kotlin Playground](https://play.kotlinlang.org/)
 - [Kotlin Playground Github](https://github.com/JetBrains/kotlin-playground)
 - [Kotlin Playground Examples](https://jetbrains.github.io/kotlin-playground/examples/)
 - [Kotlin/JS Coroutines](https://github.com/Kotlin/kotlinx.coroutines/tree/master/js/example-frontend-js)
+- [XTerm Pkg](https://classic.yarnpkg.com/en/package/xterm)
+- [HTML Meta tags](view-source:https://kotlinlang.org/)
 
 ### Kotlin UI frameworks
 

@@ -11,7 +11,7 @@
 @file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-jvm:0.12.0")
 @file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client:0.12.0")
 @file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client-jvm:0.12.0")
-@file:DependsOn("io.ktor:ktor-client-okhttp:1.4.3")
+@file:DependsOn("io.ktor:ktor-client-okhttp:1.5.4")
 @file:CompilerOptions("-jvm-target", "1.8", "-Xopt-in=kotlin.RequiresOptIn")
 @file:OptIn(ExperimentalTime::class)
 
