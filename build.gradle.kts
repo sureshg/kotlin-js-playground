@@ -18,11 +18,24 @@ version = "0.0.1"
 kotlin {
     js(IR) {
         browser {
-            distribution { directory = File("$projectDir/docs") }
-            commonWebpackConfig { cssSupport.enabled = true }
-            testTask { useKarma { useChromeHeadless() } }
+            distribution {
+                directory = File("$projectDir/docs")
+            }
+
+            commonWebpackConfig {
+                cssSupport.enabled = true
+                outputFileName = "app.js"
+            }
+
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                }
+            }
         }
+
         binaries.executable()
+
         compilations.all { kotlinOptions {} }
     }
 
