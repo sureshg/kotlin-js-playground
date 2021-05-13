@@ -121,7 +121,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.3")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains:kotlin-styled:5.2.3-pre.154-kotlin-1.5.0")
+    implementation("org.jetbrains:kotlin-styled:5.3.0-pre.155-kotlin-1.5.0")
 
     implementation("io.ktor:ktor-client-js:$ktorVersion")
     implementation("io.ktor:ktor-client-websockets:$ktorVersion")
