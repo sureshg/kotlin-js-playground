@@ -3,11 +3,11 @@ import org.jetbrains.kotlin.gradle.dsl.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.google.devtools.ksp") version "1.5.0-1.0.0-alpha09"
-    kotlin("js") version "1.5.0"
-    kotlin("plugin.serialization") version "1.5.0"
+    id("com.google.devtools.ksp") version "1.5.0-1.0.0-alpha10"
+    kotlin("js") version "1.5.10"
+    kotlin("plugin.serialization") version "1.5.10"
     id("com.github.ben-manes.versions") version "0.38.0"
-    id("com.diffplug.spotless") version "5.12.4"
+    id("com.diffplug.spotless") version "5.12.5"
     id("dev.zacsweers.redacted") version "0.8.0"
 }
 
@@ -105,7 +105,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.0.1"
+        gradleVersion = "7.0.2"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -115,13 +115,13 @@ tasks {
 
 dependencies {
     val ktorVersion = "1.5.4"
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.0")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.3")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains:kotlin-styled:5.3.0-pre.155-kotlin-1.5.0")
+    implementation("org.jetbrains:kotlin-styled:5.3.0-pre.156-kotlin-1.5.0")
 
     implementation("io.ktor:ktor-client-js:$ktorVersion")
     implementation("io.ktor:ktor-client-websockets:$ktorVersion")
@@ -129,7 +129,7 @@ dependencies {
     implementation("io.rsocket.kotlin:rsocket-core:0.12.0")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.12.0")
 
-    implementation("com.russhwolf:multiplatform-settings:0.7.6")
+    implementation("com.russhwolf:multiplatform-settings:0.7.7")
     implementation("net.mamoe.yamlkt:yamlkt:0.9.0")
 
     implementation("io.github.microutils:kotlin-logging:2.0.6")
@@ -138,7 +138,7 @@ dependencies {
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.2.0")
 
     implementation(npm("kotlin-playground", "1.24.0"))
-    implementation(npm("xterm", "4.11.0"))
+    implementation(npm("xterm", "4.12.0"))
     testImplementation(kotlin("test-js"))
 
     // implementation("co.touchlab:kermit:0.1.8")
