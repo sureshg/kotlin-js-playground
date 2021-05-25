@@ -1,4 +1,4 @@
-# Kotlin/JS Playground [![Kotlin/JS Build](https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml/badge.svg)](https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml)
+# Kotlin/JS Playground [![Kotlin/JS Build](https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml)
 
 Kotlin/JS playground
 
