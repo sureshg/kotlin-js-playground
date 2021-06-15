@@ -137,8 +137,9 @@ dependencies {
     implementation("com.benasher44:uuid:0.3.0")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.2.0")
 
-    implementation(npm("kotlin-playground", "1.24.0"))
-    implementation(npm("xterm", "4.12.0"))
+    implementation(npm("kotlin-playground", "1.24.2"))
+    implementation(npm("xterm", "4.13.0"))
+
     testImplementation(kotlin("test-js"))
 
     // implementation("app.softwork:routing-compose:0.0.1")

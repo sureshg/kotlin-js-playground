@@ -10,8 +10,7 @@ import io.rsocket.kotlin.transport.ktor.client.*
 import kotlinx.browser.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import kotlinx.datetime.Clock
-import kotlinx.datetime.internal.JSJoda.*
+import kotlinx.datetime.*
 import kotlinx.dom.*
 import kotlinx.html.*
 import kotlinx.html.dom.*
@@ -25,7 +24,6 @@ import org.w3c.dom.*
 import xterm.*
 import kotlin.collections.set
 import kotlin.time.*
-import kotlin.time.Duration
 
 fun main() {
     val format = Json {
