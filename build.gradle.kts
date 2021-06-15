@@ -3,11 +3,11 @@ import org.jetbrains.kotlin.gradle.dsl.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.google.devtools.ksp") version "1.5.0-1.0.0-alpha10"
-    kotlin("js") version "1.5.10"
-    kotlin("plugin.serialization") version "1.5.10"
-    id("com.github.ben-manes.versions") version "0.38.0"
-    id("com.diffplug.spotless") version "5.12.5"
+    id("com.google.devtools.ksp") version "1.5.10-1.0.0-beta02"
+    kotlin("js") version "1.5.20-RC"
+    kotlin("plugin.serialization") version "1.5.20-RC"
+    id("com.github.ben-manes.versions") version "0.39.0"
+    id("com.diffplug.spotless") version "5.13.0"
     id("dev.zacsweers.redacted") version "0.8.0"
 }
 
@@ -105,7 +105,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.0.2"
+        gradleVersion = "7.1"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -114,14 +114,14 @@ tasks {
 }
 
 dependencies {
-    val ktorVersion = "1.5.4"
+    val ktorVersion = "1.6.0"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
-    implementation("org.jetbrains:markdown:0.2.3")
+    implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains:kotlin-styled:5.3.0-pre.156-kotlin-1.5.0")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.0-pre.211-kotlin-1.5.10")
 
     implementation("io.ktor:ktor-client-js:$ktorVersion")
     implementation("io.ktor:ktor-client-websockets:$ktorVersion")
@@ -132,7 +132,7 @@ dependencies {
     implementation("com.russhwolf:multiplatform-settings:0.7.7")
     implementation("net.mamoe.yamlkt:yamlkt:0.9.0")
 
-    implementation("io.github.microutils:kotlin-logging:2.0.6")
+    implementation("io.github.microutils:kotlin-logging:2.0.8")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.2")
     implementation("com.benasher44:uuid:0.3.0")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.2.0")
@@ -141,6 +141,7 @@ dependencies {
     implementation(npm("xterm", "4.12.0"))
     testImplementation(kotlin("test-js"))
 
+    // implementation("app.softwork:routing-compose:0.0.1")
     // implementation("co.touchlab:kermit:0.1.8")
     // implementation("com.github.ajalt.colormath:colormath:2.0.0")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta1")
