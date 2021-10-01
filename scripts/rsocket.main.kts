@@ -1,17 +1,9 @@
-#!/usr/bin/env kotlin
+#!/usr/bin/env -S kotlin
 
-// For compilation
-//  #!/usr/bin/env -S kotlinc-jvm -nowarn -script
-
-@file:Repository("https://repo1.maven.org/maven2/")
-@file:Repository("https://jcenter.bintray.com/")
-@file:DependsOn("io.rsocket.kotlin:rsocket-core:0.12.0")
-@file:DependsOn("io.rsocket.kotlin:rsocket-core-jvm:0.12.0")
-@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor:0.12.0")
-@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-jvm:0.12.0")
-@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client:0.12.0")
-@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client-jvm:0.12.0")
-@file:DependsOn("io.ktor:ktor-client-okhttp:1.5.4")
+@file:DependsOn("io.rsocket.kotlin:rsocket-core:0.13.1")
+@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor:0.13.1")
+@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client:0.13.1")
+@file:DependsOn("io.ktor:ktor-client-okhttp:1.6.3")
 @file:CompilerOptions("-jvm-target", "1.8", "-Xopt-in=kotlin.RequiresOptIn")
 @file:OptIn(ExperimentalTime::class)
 
@@ -44,13 +36,14 @@ runBlocking {
     // connect to some url
     val demoUrl = "wss://demo.rsocket.io/rsocket"
     println("Connecting to $demoUrl")
-    val rSocket: RSocket = client.rSocket(demoUrl)
+    val rSocket = client.rSocket(urlString = demoUrl)
 
     // request stream
-    val stream: Flow<Payload> = rSocket.requestStream(Payload.Empty)
+    val stream = rSocket.requestStream(buildPayload { data("Kotlin") })
 
     // take 5 values and print response
-    stream.take(5).collect { payload: Payload ->
+    stream.take(11).collect { payload: Payload ->
         println(payload.data.readText())
     }
+    client.close()
 }

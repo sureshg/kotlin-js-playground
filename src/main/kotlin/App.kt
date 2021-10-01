@@ -1,4 +1,5 @@
 import com.russhwolf.settings.*
+import hljs.*
 import io.ktor.client.*
 import io.ktor.client.features.websocket.*
 import io.ktor.client.request.*
@@ -25,6 +26,7 @@ import xterm.*
 import kotlin.collections.set
 import kotlin.time.*
 
+@OptIn(DelicateCoroutinesApi::class)
 fun main() {
     val format = Json {
         prettyPrint = true
@@ -45,37 +47,42 @@ fun main() {
                 val client = HttpClient {
                     install(WebSockets)
                     install(RSocketSupport) {
-                        connector =
-                            RSocketConnector {
-                                // configure rSocket connector
-                                connectionConfig {
-                                    keepAlive =
-                                        KeepAlive(
-                                            interval = Duration.seconds(30),
-                                            maxLifetime = Duration.minutes(2)
-                                        )
-                                    payloadMimeType =
-                                        PayloadMimeType(
-                                            data = "application/json",
-                                            metadata = "application/json"
-                                        )
-                                }
+                        connector = RSocketConnector {
+                            // configure rSocket connector
+                            connectionConfig {
+                                keepAlive =
+                                    KeepAlive(
+                                        interval = Duration.seconds(30),
+                                        maxLifetime = Duration.minutes(2)
+                                    )
+                                payloadMimeType = PayloadMimeType(
+                                    data = "application/json",
+                                    metadata = "application/json"
+                                )
+                                // payload for setup frame
+                                setupPayload { buildPayload { data("Hello Kotlin!") } }
+                            }
 
-                                // Interceptors
-                                interceptors {
-                                    forConnection { conn ->
-                                        println("Accepting new RSocket connection!")
-                                        conn
-                                    }
-                                }
-
-                                // optional acceptor for server requests
-                                acceptor {
-                                    RSocketRequestHandler {
-                                        requestResponse { it } // echo request payload
-                                    }
+                            // Interceptors
+                            interceptors {
+                                forConnection { conn ->
+                                    println("Accepting new RSocket connection!")
+                                    conn
                                 }
                             }
+
+                            // optional acceptor for server requests
+                            acceptor {
+                                RSocketRequestHandler {
+                                    requestResponse { it } // echo request payload
+                                }
+                            }
+
+                            reconnectable { t, attempt ->
+                                println("Reconnecting $attempt time due to ${t.message}")
+                                true
+                            }
+                        }
                     }
                 }
 
@@ -88,9 +95,9 @@ fun main() {
                         style = "white-space: pre-line; background: #DDDDDD"
 
                         +"""
-               $resp
-               ${settings.getString("name", "n/a")}
-               ${took.toDouble(DurationUnit.MILLISECONDS)} ms
+                        $resp
+                        ${settings.getString("name", "n/a")}
+                        ${took.toDouble(DurationUnit.MILLISECONDS)} ms
                         """.trimIndent()
                     }
 
@@ -105,12 +112,12 @@ fun main() {
                         attributes["folded-button"] = "true"
 
                         +"""
-                           fun main() {
-                             val langs = listOf("Java","Kotlin","Scala","Clojure","Groovy")
-                             langs.forEach {
+                         fun main() {
+                            val langs = listOf("Java","Kotlin","Scala","Clojure","Groovy")
+                            langs.forEach {
                                 println(it)
-                             } 
-                            }            
+                            } 
+                         }            
                         """.trimIndent()
                     }
 
@@ -119,11 +126,34 @@ fun main() {
                         rows = "20"
                         cols = "70"
                     }
+
+                    pre {
+                        attributes["max-height"] = "25em"
+                        attributes["overflow"] = "auto"
+                        attributes["height"] = "auto"
+
+                        code {
+                            classes = setOf("language-kotlin", "hljs")
+                            attributes["font-family"] = "'JetBrains Mono', monospace"
+                            attributes["tab-size"] = "2"
+                            attributes["font-size"] = "10pt"
+                            attributes["font-family"] = "'JetBrains Mono', monospace"
+                            +"""
+                             fun main() {
+                                val langs = listOf("Java","Kotlin","Scala","Clojure","Groovy")
+                                langs.forEach {
+                                    println(it)
+                                } 
+                             }            
+                            """.trimIndent()
+                        }
+                    }
                 }
 
                 println("Enabling Kotlin Playground!")
                 KotlinPlayground(".kotlin-code")
 
+                codeHighlight()
                 yamlTest()
                 markdownTest()
                 parserTest()
@@ -135,7 +165,9 @@ fun main() {
                 while (isActive) {
                     val time = document.getElementById("time")
                     time?.textContent =
-                        ZonedDateTime.now(ZoneId.SYSTEM).toLocalDateTime().toString()
+                        Clock.System.now()
+                            .toLocalDateTime(TimeZone.currentSystemDefault())
+                            .toString()
                     delay(1000)
                 }
             }
@@ -168,7 +200,6 @@ fun main() {
             List(5) { println("Kotlin/JS-$it: ${Clock.System.now()}") }
 
             // jsTypeOf()
-            // js()
         }
 }
 
@@ -179,17 +210,27 @@ fun log(text: Any) {
 
 suspend fun rSocketTest(client: HttpClient) {
     try {
-        log("\nRSocket Test\n")
+        log("\n\nRSocket Test\n")
         log("------------\n")
         val demoUrl = "wss://demo.rsocket.io/rsocket"
         println("Connecting to RSocket server at $demoUrl")
         val rSocket = client.rSocket(urlString = demoUrl)
         val stream = rSocket.requestStream(Payload.Empty)
-        stream.take(10).collect { log(it.data.readText()) }
+        stream.take(11).collect { log("${it.data.readText()} ") }
     } catch (t: Throwable) {
         t.printStackTrace()
         log("Error : ${t.message}")
     }
+}
+
+fun HTMLElement.highlightCode(code: String) {
+    innerText = code
+    HighlightJs.highlightElement(this)
+}
+
+fun codeHighlight() {
+    println("Enabling code Highlighting: ${HighlightJs.versionString} ")
+    HighlightJs.highlightAll()
 }
 
 fun yamlTest() {

@@ -4,7 +4,6 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         google()
-        jcenter() // For RSocket
     }
 }
 
