@@ -236,16 +236,14 @@ fun codeHighlight() {
 fun yamlTest() {
     log("\nYaml Test\n")
     log("---------\n")
-    val model =
-        Yaml.Default.decodeFromString(
-            Model.serializer(),
-            """
+    val model = Yaml.Default.decodeFromString<Model>(
+        """
             test: testString
             nest: 
               numberCast: 0xFE
             list: [str, "str2"]
             """
-        )
+    )
     log("$model\n")
 }
 
@@ -275,7 +273,9 @@ data class Model(
     val test: String,
     val optional: String = "optional", // Having default value means optional
     val nest: Nested,
-    val list: List<String>
+    val list: List<String>,
+    @Redacted
+    val password: String = "password"
 ) {
     @Serializable
     data class Nested(val numberCast: Int)
