@@ -113,7 +113,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.1-pre.251-kotlin-1.5.31")
 
-    val ktorVersion = "1.6.3"
+    val ktorVersion = "1.6.4"
     implementation("io.ktor:ktor-client-js:$ktorVersion")
     implementation("io.ktor:ktor-client-websockets:$ktorVersion")
 
