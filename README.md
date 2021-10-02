@@ -1,4 +1,4 @@
-# Kotlin/JS Playground 
+# Kotlin/JS Playground
 
 [![Kotlin/JS Build][workflow_img]][workflow_url]
 
