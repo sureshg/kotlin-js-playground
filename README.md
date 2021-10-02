@@ -1,4 +1,6 @@
-# Kotlin/JS Playground [![Kotlin/JS Build](https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml)
+# Kotlin/JS Playground 
+
+[![Kotlin/JS Build][workflow_img]][workflow_url]
 
 Kotlin/JS playground
 
@@ -19,3 +21,6 @@ Kotlin/JS playground
 - [RSocket Kotlin](https://github.com/rsocket/rsocket-kotlin)
 - [RSocket KMP Chat](https://github.com/rsocket/rsocket-kotlin/tree/master/examples/multiplatform-chat)
 - [Rsocket Frame Inspector](https://chrome.google.com/webstore/detail/rsocket-frame-inspector/nijdiakpmjaohioaelphnfdbdpbbgkhc)
+
+[workflow_img]: https://img.shields.io/github/workflow/status/sureshg/kotlin-js-playground/KotlinJS%20Build?color=green&label=KotlinJS%20Build&logo=github%20actions&logoColor=green&style=for-the-badge
+[workflow_url]: https://github.com/sureshg/kotlin-js-playground/actions/workflows/build.yml

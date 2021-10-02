@@ -1,4 +1,4 @@
-name: Kotlin/JS Build
+name: KotlinJS Build
 
 on:
   push:
