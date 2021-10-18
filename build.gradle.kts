@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.serialization") version "1.5.31"
     id("com.github.ben-manes.versions") version "0.39.0"
     id("com.diffplug.spotless") version "5.16.0"
-    id("dev.zacsweers.redacted") version "0.8.0"
+    id("dev.zacsweers.redacted") version "0.8.3"
 }
 
 group = "dev.suresh"
