@@ -1,14 +1,13 @@
 import org.jetbrains.kotlin.config.*
-import org.jetbrains.kotlin.gradle.dsl.*
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.*
 
 plugins {
-    id("com.google.devtools.ksp") version "1.5.31-1.0.0"
-    kotlin("js") version "1.5.31"
-    kotlin("plugin.serialization") version "1.5.31"
+    id("com.google.devtools.ksp") version "1.6.0-RC-1.0.0"
+    kotlin("js") version "1.6.0-RC"
+    kotlin("plugin.serialization") version "1.6.0-RC"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "5.16.0"
-    id("dev.zacsweers.redacted") version "0.8.0"
+    id("com.diffplug.spotless") version "5.17.0"
+    id("dev.zacsweers.redacted") version "0.8.3"
 }
 
 group = "dev.suresh"
@@ -32,8 +31,13 @@ kotlin {
                 }
             }
         }
+
+        compilations.all {
+            kotlinOptions {
+                freeCompilerArgs += listOf("-Xir-per-module")
+            }
+        }
         binaries.executable()
-        compilations.all { kotlinOptions {} }
     }
 
     sourceSets.all {
@@ -86,17 +90,14 @@ tasks {
             freeCompilerArgs +=
                 listOf(
                     "-progressive",
+                    "-Xir-per-module",
                     "-Xallow-result-return-type",
                 )
         }
     }
 
-    withType<KotlinJsCompile>().configureEach {
-        kotlinOptions.freeCompilerArgs += listOf("-Xir-per-module")
-    }
-
     wrapper {
-        gradleVersion = "7.2"
+        gradleVersion = "7.3-rc-2"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -111,7 +112,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.1-pre.251-kotlin-1.5.31")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.260-kotlin-1.5.31")
 
     val ktorVersion = "1.6.4"
     implementation("io.ktor:ktor-client-js:$ktorVersion")
@@ -137,8 +138,8 @@ dependencies {
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
-    implementation(npm("kotlin-playground", "1.25.0"))
-    implementation(npm("highlight.js", "11.2.0"))
+    implementation(npm("kotlin-playground", "1.25.2"))
+    implementation(npm("highlight.js", "11.3.1"))
     implementation(npm("xterm", "4.14.1"))
 
     testImplementation(kotlin("test-js"))
