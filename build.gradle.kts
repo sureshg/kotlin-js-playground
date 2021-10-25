@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.config.*
-import org.jetbrains.kotlin.gradle.tasks.*
+import org.jetbrains.kotlin.gradle.dsl.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.google.devtools.ksp") version "1.6.0-RC-1.0.0"
@@ -31,12 +32,7 @@ kotlin {
                 }
             }
         }
-
-        compilations.all {
-            kotlinOptions {
-                freeCompilerArgs += listOf("-Xir-per-module")
-            }
-        }
+        compilations.all { kotlinOptions {} }
         binaries.executable()
     }
 
@@ -90,9 +86,16 @@ tasks {
             freeCompilerArgs +=
                 listOf(
                     "-progressive",
-                    "-Xir-per-module",
                     "-Xallow-result-return-type",
                 )
+        }
+    }
+
+    withType<KotlinJsCompile>().configureEach {
+        kotlinOptions {
+            // sourceMap = true
+            // sourceMapEmbedSources = "always"
+            freeCompilerArgs += listOf("-Xir-per-module")
         }
     }
 
