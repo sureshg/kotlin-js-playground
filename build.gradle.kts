@@ -7,7 +7,7 @@ plugins {
     kotlin("js") version "1.6.0-RC"
     kotlin("plugin.serialization") version "1.6.0-RC"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "5.17.0"
+    id("com.diffplug.spotless") version "5.17.1"
     id("dev.zacsweers.redacted") version "0.8.3"
 }
 
