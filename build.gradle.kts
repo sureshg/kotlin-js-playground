@@ -111,7 +111,7 @@ tasks {
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
