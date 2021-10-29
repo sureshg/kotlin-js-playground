@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.google.devtools.ksp") version "1.6.0-RC-1.0.0"
+    id("com.google.devtools.ksp") version "1.6.0-RC-1.0.1-RC"
     kotlin("js") version "1.6.0-RC"
     kotlin("plugin.serialization") version "1.6.0-RC"
     id("com.github.ben-manes.versions") version "0.39.0"
