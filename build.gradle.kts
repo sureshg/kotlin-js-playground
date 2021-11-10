@@ -135,7 +135,7 @@ dependencies {
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
     implementation("com.benasher44:uuid:0.3.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.3.0")
-    implementation("com.ionspin.kotlin:bignum:0.3.2")
+    implementation("com.ionspin.kotlin:bignum:0.3.3")
 
     implementation("com.github.ajalt.colormath:colormath:3.1.1")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
