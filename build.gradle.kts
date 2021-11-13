@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.config.*
 import org.jetbrains.kotlin.gradle.dsl.*
+import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -7,7 +8,7 @@ plugins {
     kotlin("js") version "1.6.0-RC2"
     kotlin("plugin.serialization") version "1.6.0-RC2"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "5.17.1"
+    id("com.diffplug.spotless") version "6.0.0"
     id("dev.zacsweers.redacted") version "0.8.3"
 }
 
@@ -99,8 +100,13 @@ tasks {
         }
     }
 
+    // Disable the execution of Yarn’s lifecycle scripts
+    withType<KotlinNpmInstallTask> {
+        args += "--ignore-scripts"
+    }
+
     wrapper {
-        gradleVersion = "7.3-rc-3"
+        gradleVersion = "7.3"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -110,12 +116,12 @@ tasks {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.263-kotlin-1.5.31")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.264-kotlin-1.5.31")
 
     val ktorVersion = "1.6.5"
     implementation("io.ktor:ktor-client-js:$ktorVersion")
@@ -135,7 +141,7 @@ dependencies {
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
     implementation("com.benasher44:uuid:0.3.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.3.0")
-    implementation("com.ionspin.kotlin:bignum:0.3.2")
+    implementation("com.ionspin.kotlin:bignum:0.3.3")
 
     implementation("com.github.ajalt.colormath:colormath:3.1.1")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
