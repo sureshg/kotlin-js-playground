@@ -9,7 +9,7 @@ plugins {
     kotlin("plugin.serialization") version "1.6.0-RC2"
     id("com.github.ben-manes.versions") version "0.39.0"
     id("com.diffplug.spotless") version "6.0.0"
-    id("dev.zacsweers.redacted") version "0.8.3"
+    id("dev.zacsweers.redacted") version "0.9.0"
 }
 
 group = "dev.suresh"
