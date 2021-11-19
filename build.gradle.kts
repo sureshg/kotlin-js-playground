@@ -137,7 +137,7 @@ dependencies {
     implementation("com.russhwolf:multiplatform-settings:0.8.1")
     implementation("net.mamoe.yamlkt:yamlkt:0.10.2")
 
-    implementation("io.github.microutils:kotlin-logging:2.0.11")
+    implementation("io.github.microutils:kotlin-logging:2.0.13")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
     implementation("com.benasher44:uuid:0.3.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.3.0")
