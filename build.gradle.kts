@@ -5,11 +5,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     // id("com.google.devtools.ksp") version "1.6.0-RC-1.0.1-RC"
-    kotlin("js") version "1.6.0-RC2"
-    kotlin("plugin.serialization") version "1.6.0-RC2"
+    kotlin("js") version "1.6.0"
+    kotlin("plugin.serialization") version "1.6.0"
     id("com.github.ben-manes.versions") version "0.39.0"
     id("com.diffplug.spotless") version "6.0.0"
-    id("dev.zacsweers.redacted") version "0.8.3"
+    id("dev.zacsweers.redacted") version "0.10.0-RC1"
 }
 
 group = "dev.suresh"
@@ -121,7 +121,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.265-kotlin-1.5.31")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.268-kotlin-1.6.0")
 
     val ktorVersion = "1.6.5"
     implementation("io.ktor:ktor-client-js:$ktorVersion")
@@ -137,7 +137,7 @@ dependencies {
     implementation("com.russhwolf:multiplatform-settings:0.8.1")
     implementation("net.mamoe.yamlkt:yamlkt:0.10.2")
 
-    implementation("io.github.microutils:kotlin-logging:2.0.11")
+    implementation("io.github.microutils:kotlin-logging:2.1.0")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
     implementation("com.benasher44:uuid:0.3.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.3.0")
@@ -147,9 +147,9 @@ dependencies {
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
-    implementation(npm("kotlin-playground", "1.25.2"))
+    implementation(npm("kotlin-playground", "1.26.1"))
     implementation(npm("highlight.js", "11.3.1"))
-    implementation(npm("xterm", "4.14.1"))
+    implementation(npm("xterm", "4.15.0"))
 
     testImplementation(kotlin("test-js"))
 

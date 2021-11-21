@@ -1,1 +1,3 @@
-@Retention(AnnotationRetention.SOURCE) @Target(AnnotationTarget.PROPERTY) annotation class Redacted
+@Retention(AnnotationRetention.SOURCE)
+@Target(AnnotationTarget.PROPERTY)
+annotation class Redacted
