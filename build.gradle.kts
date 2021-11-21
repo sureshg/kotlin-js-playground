@@ -121,7 +121,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.268-kotlin-1.6.0")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.269-kotlin-1.6.0")
 
     val ktorVersion = "1.6.5"
     implementation("io.ktor:ktor-client-js:$ktorVersion")
