@@ -8,6 +8,9 @@ import io.rsocket.kotlin.core.*
 import io.rsocket.kotlin.keepalive.*
 import io.rsocket.kotlin.payload.*
 import io.rsocket.kotlin.transport.ktor.client.*
+import jetbrains.letsPlot.*
+import jetbrains.letsPlot.frontend.*
+import jetbrains.letsPlot.geom.*
 import kotlinx.browser.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
@@ -24,6 +27,8 @@ import org.intellij.markdown.parser.*
 import org.w3c.dom.*
 import xterm.*
 import kotlin.collections.set
+import kotlin.math.*
+import kotlin.random.*
 import kotlin.time.*
 
 @OptIn(DelicateCoroutinesApi::class)
@@ -195,12 +200,40 @@ fun main() {
                 }
             }
 
+            // letsPlott
+            letsPlott()
+
             val epoch = js("Date.now()") as Double
             println("Epoch using JS Date: $epoch")
             List(5) { println("Kotlin/JS-$it: ${Clock.System.now()}") }
 
             // jsTypeOf()
         }
+}
+
+fun letsPlott() {
+    val contentDiv = document.getElementById("content")
+    val n = 100
+    val data = mapOf(
+        "x" to List(n) { nextGaussian() }
+    )
+
+    val p = letsPlot(data) + geomDensity(
+        color = "dark-green",
+        fill = "green",
+        alpha = .3,
+        size = 2.0
+    ) { x = "x" }
+
+    contentDiv?.appendChild(JsFrontendUtil.createPlotDiv(p))
+}
+
+fun nextGaussian(): Double {
+    var u = 0.0
+    var v = 0.0
+    while (u < 1.0e-7) u = Random.nextDouble()
+    while (v < 1.0e-7) v = Random.nextDouble()
+    return sqrt(-2.0 * ln(u)) * cos(2.0 * PI * v)
 }
 
 fun log(text: Any) {

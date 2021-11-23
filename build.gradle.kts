@@ -151,6 +151,8 @@ dependencies {
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.1.0")
+
     implementation(npm("kotlin-playground", "1.26.1"))
     implementation(npm("highlight.js", "11.3.1"))
     implementation(npm("xterm", "4.15.0"))
