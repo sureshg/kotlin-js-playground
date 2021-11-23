@@ -4,16 +4,17 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    // id("com.google.devtools.ksp") version "1.6.0-RC-1.0.1-RC"
+    // id("com.google.devtools.ksp") version "1.6.0-1.0.1"
     kotlin("js") version "1.6.0"
     kotlin("plugin.serialization") version "1.6.0"
     id("com.github.ben-manes.versions") version "0.39.0"
     id("com.diffplug.spotless") version "6.0.0"
     id("dev.zacsweers.redacted") version "0.10.0-RC1"
+    // id("com.github.turansky.kfc.library") version "4.50.0"
 }
 
 group = "dev.suresh"
-version = "0.0.1"
+version = "0.1.0"
 
 kotlin {
     js(IR) {
@@ -115,17 +116,20 @@ tasks {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:5.3.3-pre.268-kotlin-1.6.0")
 
-    val ktorVersion = "1.6.5"
-    implementation("io.ktor:ktor-client-js:$ktorVersion")
-    implementation("io.ktor:ktor-client-websockets:$ktorVersion")
+    // Kotlin wrappers
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.270-kotlin-1.6.0")))
+    implementation(kotlinw("styled"))
+
+    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.5"))
+    implementation("io.ktor:ktor-client-js")
+    implementation("io.ktor:ktor-client-websockets")
 
     implementation("app.softwork:kotlinx-uuid-core:0.0.12")
     // implementation("app.softwork:routing-compose:0.1.0")
@@ -168,3 +172,5 @@ dependencies {
     // implementation(npm("@types/crypto-js", "4.0.1", generateExternals = true))
     // implementation(devNpm("webpack-bundle-analyzer", "4.4.0"))
 }
+
+fun kotlinw(target: String): String = "org.jetbrains.kotlin-wrappers:kotlin-$target"
