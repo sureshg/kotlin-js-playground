@@ -124,7 +124,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.270-kotlin-1.6.0")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.272-kotlin-1.6.0")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.5"))
@@ -151,7 +151,9 @@ dependencies {
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
+    // Charts
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.1.0")
+    implementation("space.kscience:plotlykt-core:0.5.0")
 
     implementation(npm("kotlin-playground", "1.26.1"))
     implementation(npm("highlight.js", "11.3.1"))
