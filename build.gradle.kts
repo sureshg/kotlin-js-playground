@@ -8,7 +8,7 @@ plugins {
     kotlin("js") version "1.6.0"
     kotlin("plugin.serialization") version "1.6.0"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "6.0.0"
+    id("com.diffplug.spotless") version "6.0.1"
     id("dev.zacsweers.redacted") version "0.10.0-RC1"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
@@ -107,7 +107,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.3"
+        gradleVersion = "7.3.1"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -124,10 +124,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.272-kotlin-1.6.0")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.274-kotlin-1.6.0")))
     implementation(kotlinw("styled"))
 
-    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.5"))
+    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.6"))
     implementation("io.ktor:ktor-client-js")
     implementation("io.ktor:ktor-client-websockets")
 
