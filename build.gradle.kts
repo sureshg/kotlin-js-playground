@@ -127,7 +127,7 @@ dependencies {
     implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.274-kotlin-1.6.0")))
     implementation(kotlinw("styled"))
 
-    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.6"))
+    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
     implementation("io.ktor:ktor-client-js")
     implementation("io.ktor:ktor-client-websockets")
 
