@@ -338,6 +338,7 @@ fun log(text: Any) {
     log?.appendText(text.toString())
 }
 
+@OptIn(InternalCoroutinesApi::class)
 suspend fun rSocketTest(client: HttpClient) {
     try {
         log("\n\nRSocket Test\n")

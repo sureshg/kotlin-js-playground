@@ -5,10 +5,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     // id("com.google.devtools.ksp") version "1.6.0-1.0.1"
-    kotlin("js") version "1.6.0"
-    kotlin("plugin.serialization") version "1.6.0"
+    kotlin("js") version "1.6.10-RC"
+    kotlin("plugin.serialization") version "1.6.10-RC"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "6.0.1"
+    id("com.diffplug.spotless") version "6.0.4"
     id("dev.zacsweers.redacted") version "0.10.0-RC1"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
@@ -55,7 +55,7 @@ kotlin {
 }
 
 spotless {
-    val ktlintVersion = "0.42.1"
+    val ktlintVersion = "0.43.2"
 
     kotlin {
         ktlint(ktlintVersion).userData(mapOf("disabled_rules" to "no-wildcard-imports"))
@@ -116,7 +116,7 @@ tasks {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
@@ -124,10 +124,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.274-kotlin-1.6.0")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.279-kotlin-1.6.0")))
     implementation(kotlinw("styled"))
 
-    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.6"))
+    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
     implementation("io.ktor:ktor-client-js")
     implementation("io.ktor:ktor-client-websockets")
 
@@ -141,13 +141,13 @@ dependencies {
     implementation("com.russhwolf:multiplatform-settings:0.8.1")
     implementation("net.mamoe.yamlkt:yamlkt:0.10.2")
 
-    implementation("io.github.microutils:kotlin-logging:2.1.0")
+    implementation("io.github.microutils:kotlin-logging:2.1.16")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
     implementation("com.benasher44:uuid:0.3.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.3.0")
     implementation("com.ionspin.kotlin:bignum:0.3.3")
 
-    implementation("com.github.ajalt.colormath:colormath:3.1.1")
+    implementation("com.github.ajalt.colormath:colormath:3.2.0")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
@@ -155,7 +155,7 @@ dependencies {
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.1.0")
     implementation("space.kscience:plotlykt-core:0.5.0")
 
-    implementation(npm("kotlin-playground", "1.26.1"))
+    implementation(npm("kotlin-playground", "1.27.0"))
     implementation(npm("highlight.js", "11.3.1"))
     implementation(npm("xterm", "4.15.0"))
 

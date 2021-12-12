@@ -1,4 +1,3 @@
-
 # Mac OSX
 .DS_Store
 
@@ -12,6 +11,9 @@ out/
 build
 reports
 !gradle-wrapper.jar
+
+# Kotlin
+kotlin-js-store/
 
 # Java
 hs_err_pid*
