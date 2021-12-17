@@ -8,7 +8,7 @@ plugins {
     kotlin("js") version "1.6.10-RC"
     kotlin("plugin.serialization") version "1.6.10-RC"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "6.0.4"
+    id("com.diffplug.spotless") version "6.0.5"
     id("dev.zacsweers.redacted") version "0.10.0-RC1"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
