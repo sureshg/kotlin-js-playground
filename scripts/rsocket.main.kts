@@ -1,9 +1,9 @@
 #!/usr/bin/env -S kotlin
 
-@file:DependsOn("io.rsocket.kotlin:rsocket-core:0.13.1")
-@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor:0.13.1")
-@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client:0.13.1")
-@file:DependsOn("io.ktor:ktor-client-okhttp:1.6.4")
+@file:DependsOn("io.rsocket.kotlin:rsocket-core:0.14.3")
+@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor:0.14.3")
+@file:DependsOn("io.rsocket.kotlin:rsocket-transport-ktor-client:0.14.3")
+@file:DependsOn("io.ktor:ktor-client-okhttp:1.6.7")
 @file:CompilerOptions("-jvm-target", "1.8", "-Xopt-in=kotlin.RequiresOptIn")
 @file:OptIn(ExperimentalTime::class)
 

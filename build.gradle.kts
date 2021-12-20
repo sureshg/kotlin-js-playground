@@ -5,11 +5,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     // id("com.google.devtools.ksp") version "1.6.0-1.0.1"
-    kotlin("js") version "1.6.10-RC"
-    kotlin("plugin.serialization") version "1.6.10-RC"
+    kotlin("js") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "6.0.4"
-    id("dev.zacsweers.redacted") version "0.10.0-RC1"
+    id("com.diffplug.spotless") version "6.0.5"
+    id("dev.zacsweers.redacted") version "0.10.0"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
 
@@ -107,7 +107,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.3.1"
+        gradleVersion = "7.3.2"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -116,7 +116,7 @@ tasks {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
@@ -124,7 +124,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.279-kotlin-1.6.0")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.282-kotlin-1.6.10")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
@@ -136,12 +136,12 @@ dependencies {
     // implementation("io.github.artemmey:compose-jb-routing:0.9.2-a2")
     // implementation("moe.tlaster:precompose:0.2.2")
 
-    implementation("io.rsocket.kotlin:rsocket-core:0.13.1")
-    implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.13.1")
+    implementation("io.rsocket.kotlin:rsocket-core:0.14.3")
+    implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.14.3")
     implementation("com.russhwolf:multiplatform-settings:0.8.1")
     implementation("net.mamoe.yamlkt:yamlkt:0.10.2")
 
-    implementation("io.github.microutils:kotlin-logging:2.1.16")
+    implementation("io.github.microutils:kotlin-logging:2.1.21")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
     implementation("com.benasher44:uuid:0.3.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.3.0")

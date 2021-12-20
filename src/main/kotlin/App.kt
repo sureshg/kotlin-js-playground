@@ -32,8 +32,10 @@ import kotlin.collections.set
 import kotlin.math.*
 import kotlin.random.*
 import kotlin.time.*
+import kotlin.time.Duration.Companion.minutes
+import kotlin.time.Duration.Companion.seconds
 
-@OptIn(DelicateCoroutinesApi::class)
+@OptIn(DelicateCoroutinesApi::class, TransportApi::class)
 fun main() {
     val format = Json {
         prettyPrint = true
@@ -59,8 +61,8 @@ fun main() {
                             connectionConfig {
                                 keepAlive =
                                     KeepAlive(
-                                        interval = Duration.seconds(30),
-                                        maxLifetime = Duration.minutes(2)
+                                        interval = 30.seconds,
+                                        maxLifetime = 2.minutes
                                     )
                                 payloadMimeType = PayloadMimeType(
                                     data = "application/json",
