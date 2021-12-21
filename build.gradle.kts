@@ -116,7 +116,7 @@ tasks {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
@@ -124,7 +124,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.282-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.283-kotlin-1.6.10")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
@@ -135,6 +135,7 @@ dependencies {
     // implementation("app.softwork:routing-compose:0.1.0")
     // implementation("io.github.artemmey:compose-jb-routing:0.9.2-a2")
     // implementation("moe.tlaster:precompose:0.2.2")
+    // implementation("cafe.adriel.voyager:voyager-core-desktop:1.0.0")
 
     implementation("io.rsocket.kotlin:rsocket-core:0.14.3")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.14.3")
