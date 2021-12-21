@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    // id("com.google.devtools.ksp") version "1.6.0-1.0.1"
+    // id("com.google.devtools.ksp") version "1.6.10-1.0.2"
     kotlin("js") version "1.6.10"
     kotlin("plugin.serialization") version "1.6.10"
     id("com.github.ben-manes.versions") version "0.39.0"
