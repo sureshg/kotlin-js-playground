@@ -19,5 +19,8 @@ kotlin-js-store/
 hs_err_pid*
 gc.log
 
+# Nodejs (Don't do this for prod apps)
+yarn.lock
+
 # Gradle release
 cx.json

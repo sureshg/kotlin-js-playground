@@ -1,6 +1,8 @@
 import org.jetbrains.kotlin.config.*
 import org.jetbrains.kotlin.gradle.dsl.*
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.*
 import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.*
+import org.jetbrains.kotlin.gradle.targets.js.yarn.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -8,8 +10,8 @@ plugins {
     kotlin("js") version "1.6.10"
     kotlin("plugin.serialization") version "1.6.10"
     id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.diffplug.spotless") version "6.0.5"
-    id("dev.zacsweers.redacted") version "0.10.0"
+    id("com.diffplug.spotless") version "6.1.0"
+    id("dev.zacsweers.redacted") version "1.0.0"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
 
@@ -79,6 +81,21 @@ redacted {
     enabled.set(true)
 }
 
+// Configure the Node and Yarn versions.
+plugins.withType<NodeJsRootPlugin> {
+    extensions.configure<NodeJsRootExtension> {
+        // nodeVersion = "16.13.1"
+    }
+}
+
+plugins.withType<YarnPlugin> {
+    extensions.configure<YarnRootExtension> {
+        // version = "1.22.17"
+        lockFileDirectory = projectDir
+        ignoreScripts = false
+    }
+}
+
 tasks {
     withType<KotlinCompile>().configureEach {
         kotlinOptions {
@@ -117,14 +134,14 @@ tasks {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.283-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.284-kotlin-1.6.10")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
@@ -158,7 +175,7 @@ dependencies {
 
     implementation(npm("kotlin-playground", "1.27.0"))
     implementation(npm("highlight.js", "11.3.1"))
-    implementation(npm("xterm", "4.15.0"))
+    implementation(npm("xterm", "4.16.0"))
 
     testImplementation(kotlin("test-js"))
 
