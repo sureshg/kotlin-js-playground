@@ -9,7 +9,7 @@ plugins {
     // id("com.google.devtools.ksp") version "1.6.10-1.0.2"
     kotlin("js") version "1.6.10"
     kotlin("plugin.serialization") version "1.6.10"
-    id("com.github.ben-manes.versions") version "0.39.0"
+    id("com.github.ben-manes.versions") version "0.40.0"
     id("com.diffplug.spotless") version "6.1.0"
     id("dev.zacsweers.redacted") version "1.0.0"
     // id("com.github.turansky.kfc.library") version "4.50.0"
@@ -136,12 +136,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
     implementation("org.jetbrains:markdown:0.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.284-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.286-kotlin-1.6.10")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
