@@ -10,7 +10,7 @@ plugins {
     kotlin("js") version "1.6.10"
     kotlin("plugin.serialization") version "1.6.10"
     id("com.github.ben-manes.versions") version "0.41.0"
-    id("com.diffplug.spotless") version "6.1.2"
+    id("com.diffplug.spotless") version "6.2.0"
     id("dev.zacsweers.redacted") version "1.0.1"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
@@ -161,7 +161,7 @@ dependencies {
 
     implementation("io.github.microutils:kotlin-logging:2.1.21")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
-    implementation("com.benasher44:uuid:0.3.1")
+    implementation("com.benasher44:uuid:0.4.0")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.4.0")
     implementation("com.ionspin.kotlin:bignum:0.3.3")
 
@@ -173,8 +173,8 @@ dependencies {
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.1.1")
     implementation("space.kscience:plotlykt-core:0.5.0")
 
-    implementation(npm("kotlin-playground", "1.27.0"))
-    implementation(npm("highlight.js", "11.3.1"))
+    implementation(npm("kotlin-playground", "1.27.1"))
+    implementation(npm("highlight.js", "11.4.0"))
     implementation(npm("xterm", "4.16.0"))
 
     testImplementation(kotlin("test-js"))
