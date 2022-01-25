@@ -74,6 +74,8 @@ spotless {
         trimTrailingWhitespace()
         endWithNewline()
     }
+
+    isEnforceCheck = false
 }
 
 redacted {
@@ -124,7 +126,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.3.3"
+        gradleVersion = "7.4-rc-1"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -141,7 +143,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.290-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.291-kotlin-1.6.10")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
