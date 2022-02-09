@@ -6,9 +6,9 @@ import org.jetbrains.kotlin.gradle.targets.js.yarn.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    // id("com.google.devtools.ksp") version "1.6.10-1.0.2"
-    kotlin("js") version "1.6.10"
-    kotlin("plugin.serialization") version "1.6.10"
+    // id("com.google.devtools.ksp") version "1.6.20-M1-1.0.2"
+    kotlin("js") version "1.6.20-M1"
+    kotlin("plugin.serialization") version "1.6.20-M1"
     id("com.github.ben-manes.versions") version "0.42.0"
     id("com.diffplug.spotless") version "6.2.2"
     id("dev.zacsweers.redacted") version "1.0.1"
@@ -74,8 +74,6 @@ spotless {
         trimTrailingWhitespace()
         endWithNewline()
     }
-
-    isEnforceCheck = false
 }
 
 redacted {
@@ -126,7 +124,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.4-rc-1"
+        gradleVersion = "7.4"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -139,11 +137,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
-    implementation("org.jetbrains:markdown:0.3.0")
+    implementation("org.jetbrains:markdown:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.291-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.296-kotlin-1.6.10")))
     implementation(kotlinw("styled"))
 
     implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.7"))
@@ -175,9 +173,9 @@ dependencies {
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.1.1")
     implementation("space.kscience:plotlykt-core:0.5.0")
 
-    implementation(npm("kotlin-playground", "1.27.1"))
+    implementation(npm("kotlin-playground", "1.27.2"))
     implementation(npm("highlight.js", "11.4.0"))
-    implementation(npm("xterm", "4.16.0"))
+    implementation(npm("xterm", "4.17.0"))
 
     testImplementation(kotlin("test-js"))
 
