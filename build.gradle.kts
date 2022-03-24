@@ -138,7 +138,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
     implementation("org.jetbrains:markdown:0.3.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.5")
 
     // Kotlin wrappers
     implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.297-kotlin-1.6.10")))
