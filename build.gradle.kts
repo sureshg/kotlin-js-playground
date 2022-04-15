@@ -154,7 +154,7 @@ dependencies {
     // implementation("moe.tlaster:precompose:0.2.2")
     // implementation("cafe.adriel.voyager:voyager-core-desktop:1.0.0")
 
-    implementation("io.rsocket.kotlin:rsocket-core:0.14.3")
+    implementation("io.rsocket.kotlin:rsocket-core:0.15.4")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.14.3")
     implementation("com.russhwolf:multiplatform-settings:0.8.1")
     implementation("net.mamoe.yamlkt:yamlkt:0.10.2")
