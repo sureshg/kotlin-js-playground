@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     // id("com.google.devtools.ksp") version "1.6.20-M1-1.0.2"
     kotlin("js") version "1.6.21"
-    kotlin("plugin.serialization") version "1.6.20"
+    kotlin("plugin.serialization") version "1.6.21"
     id("com.github.ben-manes.versions") version "0.42.0"
     id("com.diffplug.spotless") version "6.4.2"
     id("dev.zacsweers.redacted") version "1.0.1"
