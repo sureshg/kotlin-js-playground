@@ -157,7 +157,7 @@ dependencies {
     implementation("io.rsocket.kotlin:rsocket-core:0.15.4")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.14.3")
     implementation("com.russhwolf:multiplatform-settings:0.8.1")
-    implementation("net.mamoe.yamlkt:yamlkt:0.10.2")
+    implementation("net.mamoe.yamlkt:yamlkt:0.11.0")
 
     implementation("io.github.microutils:kotlin-logging:2.1.21")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.4")
