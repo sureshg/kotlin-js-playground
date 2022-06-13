@@ -10,7 +10,7 @@ plugins {
     kotlin("js") version "1.7.0"
     kotlin("plugin.serialization") version "1.7.0"
     id("com.github.ben-manes.versions") version "0.42.0"
-    id("com.diffplug.spotless") version "6.7.0"
+    id("com.diffplug.spotless") version "6.7.2"
     id("dev.zacsweers.redacted") version "1.1.0"
     // id("com.github.turansky.kfc.library") version "4.50.0"
 }
