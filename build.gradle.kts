@@ -170,7 +170,7 @@ dependencies {
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
     // Charts
-    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.2.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.3.0")
     implementation("space.kscience:plotlykt-core:0.5.0")
 
     implementation(npm("kotlin-playground", "1.27.2"))
