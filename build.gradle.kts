@@ -124,7 +124,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.4"
+        gradleVersion = "7.5-rc-2"
         distributionType = Wrapper.DistributionType.ALL
     }
 
@@ -133,18 +133,18 @@ tasks {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.3")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
     implementation("org.jetbrains:markdown:0.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.5")
 
     // Kotlin wrappers
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.297-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.345")))
     implementation(kotlinw("styled"))
 
-    implementation(enforcedPlatform("io.ktor:ktor-bom:1.6.8"))
+    implementation(enforcedPlatform("io.ktor:ktor-bom:2.0.2"))
     implementation("io.ktor:ktor-client-js")
     implementation("io.ktor:ktor-client-websockets")
 
@@ -154,28 +154,27 @@ dependencies {
     // implementation("moe.tlaster:precompose:0.2.2")
     // implementation("cafe.adriel.voyager:voyager-core-desktop:1.0.0")
 
-    implementation("io.rsocket.kotlin:rsocket-core:0.15.4")
-    implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:0.14.3")
-    implementation("com.russhwolf:multiplatform-settings:0.9")
+    implementation("io.rsocket.kotlin:rsocket-ktor-client:0.15.4")
+    implementation("com.russhwolf:multiplatform-settings:1.0.0-alpha01")
     implementation("net.mamoe.yamlkt:yamlkt:0.12.0")
 
     implementation("io.github.microutils:kotlin-logging:2.1.23")
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.4")
-    implementation("com.benasher44:uuid:0.4.0")
+    implementation("com.benasher44:uuid:0.4.1")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.4.0")
-    implementation("com.ionspin.kotlin:bignum:0.3.4")
+    implementation("com.ionspin.kotlin:bignum:0.3.6")
 
     implementation("com.github.ajalt.colormath:colormath:3.2.0")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
     // Charts
-    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.3.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-js:3.2.0")
     implementation("space.kscience:plotlykt-core:0.5.0")
 
     implementation(npm("kotlin-playground", "1.27.2"))
-    implementation(npm("highlight.js", "11.4.0"))
-    implementation(npm("xterm", "4.17.0"))
+    implementation(npm("highlight.js", "11.5.1"))
+    implementation(npm("xterm", "4.18.0"))
 
     testImplementation(kotlin("test-js"))
 
