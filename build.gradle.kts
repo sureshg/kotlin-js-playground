@@ -162,7 +162,7 @@ dependencies {
     implementation("com.github.h0tk3y.betterParse:better-parse:0.4.4")
     implementation("com.benasher44:uuid:0.5.0")
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.4.0")
-    implementation("com.ionspin.kotlin:bignum:0.3.6")
+    implementation("com.ionspin.kotlin:bignum:0.3.7")
 
     implementation("com.github.ajalt.colormath:colormath:3.2.0")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
