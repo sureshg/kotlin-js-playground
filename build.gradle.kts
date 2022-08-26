@@ -148,7 +148,7 @@ dependencies {
     implementation("io.ktor:ktor-client-js")
     implementation("io.ktor:ktor-client-websockets")
 
-    implementation("app.softwork:kotlinx-uuid-core:0.0.15")
+    implementation("app.softwork:kotlinx-uuid-core:0.0.16")
     // implementation("app.softwork:routing-compose:0.1.0")
     // implementation("io.github.artemmey:compose-jb-routing:0.9.2-a2")
     // implementation("moe.tlaster:precompose:0.2.2")
