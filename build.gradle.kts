@@ -164,7 +164,7 @@ dependencies {
     implementation("io.github.petertrr:kotlin-multiplatform-diff:0.4.0")
     implementation("com.ionspin.kotlin:bignum:0.3.7")
 
-    implementation("com.github.ajalt.colormath:colormath:3.2.0")
+    implementation("com.github.ajalt.colormath:colormath:3.2.1")
     // implementation("com.github.ajalt.mordant:mordant:2.0.0-beta2")
     // implementation("com.github.ajalt.clikt:clikt:3.2.0")
 
