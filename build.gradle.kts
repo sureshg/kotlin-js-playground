@@ -137,7 +137,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
-    implementation("org.jetbrains:markdown:0.3.4")
+    implementation("org.jetbrains:markdown:0.3.5")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.8.1")
 
     // Kotlin wrappers
