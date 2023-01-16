@@ -155,7 +155,7 @@ dependencies {
     // implementation("cafe.adriel.voyager:voyager-core-desktop:1.0.0")
 
     implementation("io.rsocket.kotlin:rsocket-ktor-client:0.15.4")
-    implementation("com.russhwolf:multiplatform-settings:1.0.0-alpha01")
+    implementation("com.russhwolf:multiplatform-settings:1.0.0")
     implementation("net.mamoe.yamlkt:yamlkt:0.12.0")
 
     implementation("io.github.microutils:kotlin-logging:2.1.23")
