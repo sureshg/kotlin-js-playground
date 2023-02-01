@@ -9,7 +9,7 @@ plugins {
     // id("com.google.devtools.ksp") version "1.6.20-M1-1.0.2"
     kotlin("js") version "1.8.0"
     kotlin("plugin.serialization") version "1.8.0"
-    id("com.github.ben-manes.versions") version "0.44.0"
+    id("com.github.ben-manes.versions") version "0.45.0"
     id("com.diffplug.spotless") version "6.14.0"
     id("dev.zacsweers.redacted") version "1.3.0"
     // id("com.github.turansky.kfc.library") version "4.50.0"
