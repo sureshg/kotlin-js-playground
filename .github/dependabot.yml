@@ -1,12 +1,5 @@
 version: 2
 updates:
-  - package-ecosystem: "gradle"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "gradle"
-      - "dependencies"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
